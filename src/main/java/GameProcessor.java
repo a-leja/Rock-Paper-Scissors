@@ -8,20 +8,24 @@ public class GameProcessor {
 
     public static void processMoves() {
         System.out.println("Make a pick!");
-        System.out.println("\n1 - rock\n2 - paper\n3 - scissors\nn - play again\nx - quit game");
+        System.out.println("1 - rock\n2 - paper\n3 - scissors\nn - play again\nx - quit game");
 
         Scanner input = new Scanner(System.in);
         int player = input.nextInt();
         Random random = new Random();
         int computer = random.nextInt(3);
+        Scanner continueOrQuit = new Scanner(System.in);
+        char choice = continueOrQuit.next().charAt(0);
 
-
-        if (player < 1 && player > 3) {
-            System.out.println("Please enter a number between 1 - 3");
-        } else if (player == computer) {
-            System.out.println("It's a draw!");
-        } else if (player == 1 ) {
-                 if (computer == 2 ) {
+        if (choice == 'n' || choice == 'x') {
+            Input.playAgainOrEndGame();
+        } else {
+            if (player < 1 || player > 3) {
+                System.out.println("Please enter a number between 1 - 3");
+            } else if (player == computer) {
+                System.out.println("It's a draw!");
+            } else if (player == 1) {
+                if (computer == 2) {
                     System.out.println("Paper covers rock - you lose!");
                     computerPoints++;
                 } else {
@@ -42,6 +46,7 @@ public class GameProcessor {
                 }
             }
         }
+    }
 
     public static int getPlayerPoints() {
         return playerPoints;

@@ -4,8 +4,7 @@ public class Input {
 
     private static String name;
     static int noOfRounds;
-    private static char playAgain;
-    private static char endGame;
+    static char playAgainOrEndGame;
     static boolean end = false;
     static Scanner input = new Scanner(System.in);
 //    static int min = Integer.MIN_VALUE;
@@ -26,27 +25,22 @@ public class Input {
 
     }
 
-    public static void playAgain() {
-        playAgain = input.next().charAt(0);
-        if (playAgain == 'x') {
-            System.out.println("Do you want to play again \n- YES - click x \n- NO - cancel");
-            Input.playAgain();
-            if (playAgain == 'x') {
-                GameProcessor.setPlayerPoints(0);
-                GameProcessor.setComputerPoints(0);
-            } else {
-                System.out.println("Let's continue the game!");
-            }
-        }
-    }
-
-    public static void endGame() {
-        System.out.println("Are you sure you want to end this game?");
-        endGame = input.next().charAt(0);
-        if (endGame == 'x') {
+    public static void playAgainOrEndGame() {
+        System.out.println("Do you want to play again \n- YES - click n \n- QUIT GAME - click x");
+        playAgainOrEndGame = input.next().charAt(0);
+        if (playAgainOrEndGame == 'n') {
+            GameProcessor.setPlayerPoints(0);
+            GameProcessor.setComputerPoints(0);
+            System.out.println("New game begins");
+        } else if (playAgainOrEndGame == 'x') {
+            System.out.println("Let's continue the game!");
             System.out.println("It was a good game! See you soon!");
             end = true;
             System.exit(0);
         }
+    }
+
+    public static boolean getEnd() {
+        return end;
     }
 }
