@@ -2,8 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GameProcessor {
-    private static int playerPoints;
-    private static int computerPoints;
+    static int playerPoints;
+    static int computerPoints;
 
 
     public static void processMoves() {
@@ -15,46 +15,49 @@ public class GameProcessor {
         Random random = new Random();
         int computer = random.nextInt(3);
 
-        if (player > 3 ) {
+
+        if (player < 1 && player > 3 ) {
             System.out.println("Please enter a number between 1 - 3");
         } else if (player == computer) {
             System.out.println("It's a draw!");
         } else if (player == 1 ) {
                  if (computer == 2 ) {
-                    System.out.println("Paper covers rock. You lose!");
+                    System.out.println("Paper covers rock - you lose!");
                     computerPoints++;
                 } else {
-                    System.out.println("Rock breaks scissors! You win!");
+                    System.out.println("Rock breaks scissors - you win!");
                     playerPoints++;
                 }
             } else if (player == 2) {
                 if (computer == 1) {
-                    System.out.println("Paper covers rock. You win!");
+                    System.out.println("Paper covers rock - you win!");
                 } else if (computer == 3) {
-                    System.out.println("Scissors cuts paper! You lose!");
+                    System.out.println("Scissors cuts paper - you lose!");
                 }
             } else if (player == 3) {
                 if (computer == 1) {
-                    System.out.println("Rock breaks scissors! You lose!");
+                    System.out.println("Rock breaks scissors - you lose!");
                 } else if (computer == 2) {
-                    System.out.println("Scissors cuts paper! You win!");
+                    System.out.println("Scissors cuts paper - you win!");
                 }
             }
         }
 
-    public int getUserPoints() {
+    public static int getPlayerPoints() {
         return playerPoints;
     }
 
-    public void setUserPoints(int userPoints) {
-        this.playerPoints = userPoints;
+    public static int setPlayerPoints(int setPlayerPoints) {
+        setPlayerPoints = playerPoints;
+        return playerPoints;
     }
 
     public int getComputerPoints() {
         return computerPoints;
     }
 
-    public void setComputerPoints(int computerPoints) {
-        this.computerPoints = computerPoints;
+    public static int setComputerPoints(int setComputerPoints) {
+        setComputerPoints = computerPoints;
+        return computerPoints;
     }
 }
