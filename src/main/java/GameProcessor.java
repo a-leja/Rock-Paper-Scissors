@@ -8,7 +8,7 @@ public class GameProcessor {
 
     public static void processMoves() {
         System.out.println("Make a pick!");
-        System.out.println("\n 1 = rock\n 2 = paper\n 3 = scissors");
+        System.out.println("\n1 - rock\n2 - paper\n3 - scissors\nn - play again\nx - quit game");
 
         Scanner input = new Scanner(System.in);
         int player = input.nextInt();
@@ -16,7 +16,7 @@ public class GameProcessor {
         int computer = random.nextInt(3);
 
 
-        if (player < 1 && player > 3 ) {
+        if (player < 1 && player > 3) {
             System.out.println("Please enter a number between 1 - 3");
         } else if (player == computer) {
             System.out.println("It's a draw!");
@@ -52,7 +52,7 @@ public class GameProcessor {
         return playerPoints;
     }
 
-    public int getComputerPoints() {
+    public static int getComputerPoints() {
         return computerPoints;
     }
 
