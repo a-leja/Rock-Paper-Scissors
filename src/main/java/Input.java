@@ -4,7 +4,7 @@ public class Input {
 
     private static String name;
     static int noOfRounds;
-    static char playAgainOrEndGame;
+    static String playAgainOrEndGame;
     static boolean end = false;
     static Scanner input = new Scanner(System.in);
 //    static int min = Integer.MIN_VALUE;
@@ -27,12 +27,12 @@ public class Input {
 
     public static void playAgainOrEndGame() {
         System.out.println("Do you want to play again \n- YES - click n \n- QUIT GAME - click x");
-        playAgainOrEndGame = input.next().charAt(0);
-        if (playAgainOrEndGame == 'n') {
+        playAgainOrEndGame = input.nextLine();
+        if (playAgainOrEndGame.equals("n")) {
             GameProcessor.setPlayerPoints(0);
             GameProcessor.setComputerPoints(0);
             System.out.println("New game begins");
-        } else if (playAgainOrEndGame == 'x') {
+        } else if (playAgainOrEndGame.equals("x")) {
             System.out.println("Let's continue the game!");
             System.out.println("It was a good game! See you soon!");
             end = true;
