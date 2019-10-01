@@ -11,8 +11,10 @@ public class RpsRunner {
                 GameProcessor.processMoves();
                 GameProcessor.getPlayerPoints();
                 GameProcessor.getComputerPoints();
-                System.out.println("End of the game");
             }
+            System.out.println("--------- YOU : COMPUTER ---------");
+            System.out.println("Current result: " + GameProcessor.getComputerPoints() + " : " + GameProcessor.getComputerPoints());
+            System.out.println("End of the game");
             Input.playAgainOrEndGame();
         }
     }
