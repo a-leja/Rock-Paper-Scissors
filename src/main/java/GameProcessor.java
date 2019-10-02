@@ -24,6 +24,8 @@ public class GameProcessor {
                 System.out.println("Please enter a number between 1 - 3");
             } else if (player == computer) {
                 System.out.println("It's a draw!");
+                playerPoints++;
+                computerPoints++;
             } else if (player == 1) {
                 if (computer == 2) {
                     System.out.println("Paper covers rock - you lose!");
@@ -35,16 +37,22 @@ public class GameProcessor {
             } else if (player == 2) {
                 if (computer == 1) {
                     System.out.println("Paper covers rock - you win!");
+                    playerPoints++;
                 } else if (computer == 3) {
                     System.out.println("Scissors cuts paper - you lose!");
+                    computerPoints++;
                 }
             } else if (player == 3) {
                 if (computer == 1) {
                     System.out.println("Rock breaks scissors - you lose!");
+                    computerPoints++;
                 } else if (computer == 2) {
                     System.out.println("Scissors cuts paper - you win!");
+                    playerPoints++;
                 }
             }
+            System.out.println("--------------- YOU : COMPUTER ---------------");
+            System.out.println("Current result:   " + playerPoints + " : " + computerPoints);
         }
     }
 

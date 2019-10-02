@@ -26,14 +26,14 @@ public class Input {
     }
 
     public static void playAgainOrEndGame() {
-        System.out.println("Do you want to play again \n- YES - click n \n- QUIT GAME - click x");
+        System.out.println("\n Do you want to play again? \n- YES - click n \n- QUIT GAME - click x");
         playAgainOrEndGame = input.nextLine();
         if (playAgainOrEndGame.equals("n")) {
             GameProcessor.setPlayerPoints(0);
             GameProcessor.setComputerPoints(0);
+            System.out.println("Let's continue the game!");
             System.out.println("New game begins");
         } else if (playAgainOrEndGame.equals("x")) {
-            System.out.println("Let's continue the game!");
             System.out.println("It was a good game! See you soon!");
             end = true;
             System.exit(0);
