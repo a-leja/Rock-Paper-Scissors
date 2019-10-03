@@ -29,6 +29,7 @@ public class Input {
         System.out.println("\n Do you want to play again? \n- YES - click n \n- QUIT GAME - click x");
         playAgainOrEndGame = input.nextLine();
         if (playAgainOrEndGame.equals("n")) {
+            end = false;
             GameProcessor.setPlayerPoints(0);
             GameProcessor.setComputerPoints(0);
             System.out.println("Let's continue the game!");
@@ -38,6 +39,14 @@ public class Input {
             end = true;
             System.exit(0);
         }
+    }
+
+    public static int getNoOfRounds() {
+        return noOfRounds;
+    }
+
+    public static String getPlayAgainOrEndGame() {
+        return playAgainOrEndGame;
     }
 
     public static boolean getEnd() {

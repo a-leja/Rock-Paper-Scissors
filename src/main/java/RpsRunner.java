@@ -7,12 +7,12 @@ public class RpsRunner {
             Input.noOfRounds();
             System.out.println("Let's start!\n");
 
-            while (GameProcessor.getPlayerPoints() < Input.noOfRounds) {
+            while (GameProcessor.getPlayerPoints() < Input.getNoOfRounds()) {
                 GameProcessor.processMoves();
                 GameProcessor.getPlayerPoints();
                 GameProcessor.getComputerPoints();
             }
-            System.out.println("End of the game - you won!");
+            System.out.println("End of the game!");
             Input.playAgainOrEndGame();
         }
     }
