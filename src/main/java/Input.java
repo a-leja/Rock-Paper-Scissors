@@ -33,7 +33,7 @@ public class Input {
             GameProcessor.setPlayerPoints(0);
             GameProcessor.setComputerPoints(0);
             System.out.println("Let's continue the game!");
-            System.out.println("New game begins");
+            System.out.println("New game begins...");
         } else if (playAgainOrEndGame.equals("x")) {
             System.out.println("It was a good game! See you soon!");
             end = true;
@@ -43,10 +43,6 @@ public class Input {
 
     public static int getNoOfRounds() {
         return noOfRounds;
-    }
-
-    public static String getPlayAgainOrEndGame() {
-        return playAgainOrEndGame;
     }
 
     public static boolean getEnd() {

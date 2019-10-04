@@ -2,8 +2,8 @@ public class RpsRunner {
 
     public static void main(String[] args) {
 
+        Input.askForPlayersName();
         while (!Input.getEnd()) {
-            Input.askForPlayersName();
             Input.noOfRounds();
             System.out.println("Let's start!\n");
 
@@ -12,7 +12,7 @@ public class RpsRunner {
                 GameProcessor.getPlayerPoints();
                 GameProcessor.getComputerPoints();
             }
-            System.out.println("End of the game!");
+            Output.showResult();
             Input.playAgainOrEndGame();
         }
     }

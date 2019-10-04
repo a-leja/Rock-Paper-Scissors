@@ -48,7 +48,7 @@ public class GameProcessor {
                 playerPoints++;
             }
         } else {
-            Input.getPlayAgainOrEndGame();
+            Input.playAgainOrEndGame();
         }
             System.out.println("--------------- YOU : COMPUTER ---------------");
             System.out.println("Current result:   " + playerPoints + " : " + computerPoints);
