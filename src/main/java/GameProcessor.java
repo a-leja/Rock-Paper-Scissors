@@ -13,9 +13,9 @@ public class GameProcessor {
         Scanner input = new Scanner(System.in);
         int player = input.nextInt();
         Random random = new Random();
-        int computer = random.nextInt(4);
-//        Scanner continueOrQuit = new Scanner(System.in);
-//        char choice = continueOrQuit.next().charAt(0);
+        int computer = random.nextInt(3) + 1;
+        Scanner continueOrQuit = new Scanner(System.in);
+        String choice = continueOrQuit.nextLine();
 
         if (player < 1 || player > 3) {
             System.out.println("Please enter a number between 1 - 3");
@@ -23,31 +23,25 @@ public class GameProcessor {
             System.out.println("It's a draw!");
                 playerPoints++;
                 computerPoints++;
-        } else if (player == 1) {
-            if (computer == 2) {
+        } else if (player == 1 && computer == 2) {
                 System.out.println("Paper covers rock - you lose!");
                 computerPoints++;
             } else if (computer == 3) {
                 System.out.println("Rock breaks scissors - you win!");
                 playerPoints++;
-            }
-        } else if (player == 2) {
-            if (computer == 1) {
+        } else if (player == 2 && computer == 1) {
                 System.out.println("Paper covers rock - you win!");
                 playerPoints++;
             } else if (computer == 3) {
                 System.out.println("Scissors cuts paper - you lose!");
                 computerPoints++;
-            }
-        } else if (player == 3) {
-            if (computer == 1) {
+        } else if (player == 3 && computer == 1) {
                 System.out.println("Rock breaks scissors - you lose!");
                 computerPoints++;
             } else if (computer == 2) {
                 System.out.println("Scissors cuts paper - you win!");
                 playerPoints++;
-            }
-        } else {
+        } else if (choice.equals("n") || continueOrQuit.equals("x")) {
             Input.playAgainOrEndGame();
         }
             System.out.println("--------------- YOU : COMPUTER ---------------");
@@ -60,8 +54,8 @@ public class GameProcessor {
     }
 
     public static int setPlayerPoints(int setPlayerPoints) {
-        setPlayerPoints = playerPoints;
-        return playerPoints;
+        playerPoints = setPlayerPoints;
+        return setPlayerPoints;
     }
 
     public static int getComputerPoints() {
@@ -69,7 +63,7 @@ public class GameProcessor {
     }
 
     public static int setComputerPoints(int setComputerPoints) {
-        setComputerPoints = computerPoints;
-        return computerPoints;
+        computerPoints = setComputerPoints;
+        return setComputerPoints;
     }
 }
